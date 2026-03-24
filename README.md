@@ -1,8 +1,5 @@
-<!-- ═══════════════════════════════════════════════════════════════ -->
-<!--  GITHUB PROFILE README  —  DevOps & Observability Engineer    -->
-<!-- ═══════════════════════════════════════════════════════════════ -->
-
 <div align="center">
+<img src="./banner.svg" width="100%" alt="DevOps & Observability Dashboard Banner"/>
 
 ```
 ╔══════════════════════════════════════════════════════════════╗
