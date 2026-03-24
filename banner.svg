@@ -1,0 +1,168 @@
+<svg width="860" height="340" viewBox="0 0 860 340" xmlns="http://www.w3.org/2000/svg" font-family="'Courier New', monospace">
+  <defs>
+    <style>
+      @keyframes pulse-ring { 0%,100%{opacity:0.12} 50%{opacity:0.4} }
+      @keyframes bar-grow { from{transform:scaleY(0)} to{transform:scaleY(1)} }
+      @keyframes line-draw { from{stroke-dashoffset:600} to{stroke-dashoffset:0} }
+      @keyframes blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
+      @keyframes float-up { 0%{transform:translateY(0);opacity:0.7} 100%{transform:translateY(-20px);opacity:0} }
+      @keyframes scan-line { 0%{transform:translateY(0)} 100%{transform:translateY(340px)} }
+      @keyframes dot-pulse { 0%,100%{r:3} 50%{r:5} }
+      @keyframes fade-in { from{opacity:0} to{opacity:1} }
+      @keyframes glow-text { 0%,100%{opacity:0.85} 50%{opacity:1} }
+
+      .scan { animation: scan-line 3s linear infinite; }
+      .bar1 { transform-origin: 67px 262px; animation: bar-grow 1.2s cubic-bezier(.22,.68,0,1.2) 0.1s both; }
+      .bar2 { transform-origin: 95px 262px; animation: bar-grow 1.2s cubic-bezier(.22,.68,0,1.2) 0.2s both; }
+      .bar3 { transform-origin: 123px 262px; animation: bar-grow 1.2s cubic-bezier(.22,.68,0,1.2) 0.3s both; }
+      .bar4 { transform-origin: 151px 262px; animation: bar-grow 1.2s cubic-bezier(.22,.68,0,1.2) 0.4s both; }
+      .bar5 { transform-origin: 179px 262px; animation: bar-grow 1.2s cubic-bezier(.22,.68,0,1.2) 0.5s both; }
+      .bar6 { transform-origin: 207px 262px; animation: bar-grow 1.2s cubic-bezier(.22,.68,0,1.2) 0.6s both; }
+      .bar7 { transform-origin: 235px 262px; animation: bar-grow 1.2s cubic-bezier(.22,.68,0,1.2) 0.7s both; }
+      .slo1 { transform-origin: 700px 108px; animation: bar-grow 1.4s cubic-bezier(.22,.68,0,1.2) 0.8s both; }
+      .slo2 { transform-origin: 700px 128px; animation: bar-grow 1.4s cubic-bezier(.22,.68,0,1.2) 0.9s both; }
+      .slo3 { transform-origin: 700px 148px; animation: bar-grow 1.4s cubic-bezier(.22,.68,0,1.2) 1.0s both; }
+      .line-main { stroke-dasharray:600; animation: line-draw 2.2s ease 0.4s both; }
+      .line-p50  { stroke-dasharray:600; animation: line-draw 2.2s ease 0.7s both; }
+      .dot-live  { animation: dot-pulse 1.4s ease-in-out infinite; }
+      .ring1 { animation: pulse-ring 2s ease-in-out infinite; }
+      .ring2 { animation: pulse-ring 2s ease-in-out 1s infinite; }
+      .ring3 { animation: pulse-ring 2s ease-in-out 0.5s infinite; }
+      .cursor { animation: blink 1s step-end infinite; }
+      .particle1 { animation: float-up 2.5s ease-in-out 0s infinite; }
+      .particle2 { animation: float-up 2.5s ease-in-out 0.7s infinite; }
+      .particle3 { animation: float-up 2.5s ease-in-out 1.3s infinite; }
+      .particle4 { animation: float-up 2.5s ease-in-out 0.3s infinite; }
+      .particle5 { animation: float-up 2.5s ease-in-out 1.8s infinite; }
+      .glow { animation: glow-text 3s ease-in-out infinite; }
+      .fade-in { animation: fade-in 1s ease 1.5s both; }
+    </style>
+    <clipPath id="lc"><rect x="326" y="140" width="228" height="110"/></clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="340" fill="#0d0b1a"/>
+
+  <!-- Scan line -->
+  <rect class="scan" x="0" y="0" width="860" height="2" fill="#a78bfa" opacity="0.04"/>
+
+  <!-- Ambient pulse circles -->
+  <circle cx="30" cy="30" r="40" fill="#7c3aed" opacity="0.07" class="ring1"/>
+  <circle cx="830" cy="310" r="55" fill="#3b82f6" opacity="0.06" class="ring2"/>
+  <circle cx="50" cy="310" r="30" fill="#a78bfa" opacity="0.05" class="ring3"/>
+
+  <!-- Floating particles -->
+  <circle cx="400" cy="22" r="1.5" fill="#a78bfa" opacity="0.6" class="particle1"/>
+  <circle cx="500" cy="30" r="1" fill="#60a5fa" opacity="0.5" class="particle2"/>
+  <circle cx="300" cy="16" r="1.5" fill="#c084fc" opacity="0.5" class="particle3"/>
+  <circle cx="650" cy="25" r="1" fill="#818cf8" opacity="0.5" class="particle4"/>
+  <circle cx="750" cy="12" r="1.5" fill="#a78bfa" opacity="0.4" class="particle5"/>
+
+  <!-- Header labels -->
+  <text x="40" y="42" font-size="11" fill="#6d28d9" opacity="0.35" font-weight="bold">// observability.engine.v2</text>
+  <text x="620" y="42" font-size="11" fill="#3b82f6" opacity="0.3">status: ALL_GREEN</text>
+
+  <!-- ═══ PANEL 1: Deployment Frequency ═══ -->
+  <rect x="30" y="58" width="260" height="252" rx="12" fill="#1a1533" stroke="#4c1d95" stroke-width="0.8"/>
+  <text x="46" y="83" font-size="10" fill="#7c3aed" font-weight="bold">DEPLOYMENT FREQUENCY</text>
+  <line x1="46" y1="90" x2="274" y2="90" stroke="#4c1d95" stroke-width="0.5" opacity="0.6"/>
+
+  <!-- Grid lines -->
+  <line x1="46" y1="180" x2="256" y2="180" stroke="#2d1b69" stroke-width="0.4" stroke-dasharray="3 3" opacity="0.5"/>
+  <line x1="46" y1="215" x2="256" y2="215" stroke="#2d1b69" stroke-width="0.4" stroke-dasharray="3 3" opacity="0.5"/>
+
+  <!-- Bars -->
+  <rect class="bar1" x="56" y="220" width="22" height="42" rx="3" fill="#7c3aed" opacity="0.85"/>
+  <rect class="bar2" x="84" y="204" width="22" height="58" rx="3" fill="#8b5cf6" opacity="0.85"/>
+  <rect class="bar3" x="112" y="213" width="22" height="49" rx="3" fill="#7c3aed" opacity="0.85"/>
+  <rect class="bar4" x="140" y="193" width="22" height="69" rx="3" fill="#a78bfa" opacity="0.9"/>
+  <rect class="bar5" x="168" y="198" width="22" height="64" rx="3" fill="#8b5cf6" opacity="0.85"/>
+  <rect class="bar6" x="196" y="185" width="22" height="77" rx="3" fill="#c084fc" opacity="0.9"/>
+  <rect class="bar7" x="224" y="180" width="22" height="82" rx="3" fill="#a78bfa" opacity="0.95"/>
+
+  <!-- Baseline -->
+  <line x1="46" y1="262" x2="256" y2="262" stroke="#4c1d95" stroke-width="0.5" opacity="0.5"/>
+  <text x="67" y="276" font-size="9" fill="#7c3aed" opacity="0.6" text-anchor="middle">M</text>
+  <text x="95" y="276" font-size="9" fill="#7c3aed" opacity="0.6" text-anchor="middle">T</text>
+  <text x="123" y="276" font-size="9" fill="#7c3aed" opacity="0.6" text-anchor="middle">W</text>
+  <text x="151" y="276" font-size="9" fill="#7c3aed" opacity="0.6" text-anchor="middle">T</text>
+  <text x="179" y="276" font-size="9" fill="#7c3aed" opacity="0.6" text-anchor="middle">F</text>
+  <text x="207" y="276" font-size="9" fill="#7c3aed" opacity="0.6" text-anchor="middle">S</text>
+  <text x="235" y="276" font-size="9" fill="#7c3aed" opacity="0.6" text-anchor="middle">S</text>
+
+  <text x="155" y="300" font-size="13" fill="#c084fc" font-weight="bold" text-anchor="middle" class="glow">14 deploys / wk</text>
+
+  <!-- ═══ PANEL 2: P99 Latency ═══ -->
+  <rect x="310" y="58" width="260" height="252" rx="12" fill="#0f172a" stroke="#1e3a5f" stroke-width="0.8"/>
+  <text x="326" y="83" font-size="10" fill="#3b82f6" font-weight="bold">P99 LATENCY (ms)</text>
+  <line x1="326" y1="90" x2="554" y2="90" stroke="#1e3a5f" stroke-width="0.5" opacity="0.6"/>
+
+  <!-- Grid lines -->
+  <line x1="326" y1="155" x2="554" y2="155" stroke="#1e3a5f" stroke-width="0.4" stroke-dasharray="4 4" opacity="0.4"/>
+  <line x1="326" y1="185" x2="554" y2="185" stroke="#1e3a5f" stroke-width="0.4" stroke-dasharray="4 4" opacity="0.4"/>
+  <line x1="326" y1="220" x2="554" y2="220" stroke="#1e3a5f" stroke-width="0.4" stroke-dasharray="4 4" opacity="0.4"/>
+
+  <!-- P50 line -->
+  <polyline class="line-p50" clip-path="url(#lc)"
+    points="326,238 356,228 386,232 416,220 446,225 476,212 506,200 536,194 554,190"
+    fill="none" stroke="#818cf8" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+
+  <!-- P99 line -->
+  <polyline class="line-main" clip-path="url(#lc)"
+    points="326,228 356,212 386,220 416,193 446,205 476,182 506,172 536,166 554,162"
+    fill="none" stroke="#60a5fa" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Live dot -->
+  <circle cx="554" cy="162" r="3" fill="#60a5fa" class="dot-live"/>
+
+  <!-- Y-axis labels -->
+  <text x="326" y="150" font-size="9" fill="#3b82f6" opacity="0.5">100ms</text>
+  <text x="326" y="183" font-size="9" fill="#3b82f6" opacity="0.5">200ms</text>
+  <text x="326" y="218" font-size="9" fill="#3b82f6" opacity="0.5">300ms</text>
+
+  <text x="440" y="300" font-size="13" fill="#60a5fa" font-weight="bold" text-anchor="middle" class="glow">p99: 142ms — within SLO</text>
+
+  <!-- ═══ PANEL 3: SLO Status ═══ -->
+  <rect x="590" y="58" width="240" height="118" rx="12" fill="#0c1a0c" stroke="#14532d" stroke-width="0.8"/>
+  <text x="614" y="82" font-size="10" fill="#22c55e" font-weight="bold">SLO STATUS</text>
+  <circle cx="606" cy="78" r="3.5" fill="#22c55e" class="dot-live"/>
+  <line x1="600" y1="90" x2="814" y2="90" stroke="#14532d" stroke-width="0.5" opacity="0.6"/>
+
+  <text x="600" y="113" font-size="9" fill="#4ade80" opacity="0.7">availability</text>
+  <rect x="680" y="102" width="124" height="10" rx="2" fill="#14532d" opacity="0.8"/>
+  <rect class="slo1" x="680" y="102" width="121" height="10" rx="2" fill="#22c55e" opacity="0.85"/>
+  <text x="810" y="113" font-size="9" fill="#4ade80" text-anchor="end" font-weight="bold">99.97%</text>
+
+  <text x="600" y="133" font-size="9" fill="#4ade80" opacity="0.7">error rate</text>
+  <rect x="680" y="122" width="124" height="10" rx="2" fill="#14532d" opacity="0.8"/>
+  <rect class="slo2" x="680" y="122" width="9" height="10" rx="2" fill="#22c55e" opacity="0.85"/>
+  <text x="810" y="133" font-size="9" fill="#4ade80" text-anchor="end" font-weight="bold">0.03%</text>
+
+  <text x="600" y="153" font-size="9" fill="#4ade80" opacity="0.7">latency p99</text>
+  <rect x="680" y="142" width="124" height="10" rx="2" fill="#14532d" opacity="0.8"/>
+  <rect class="slo3" x="680" y="142" width="86" height="10" rx="2" fill="#86efac" opacity="0.8"/>
+  <text x="810" y="153" font-size="9" fill="#4ade80" text-anchor="end" font-weight="bold">142ms</text>
+
+  <!-- ═══ PANEL 4: Infrastructure ═══ -->
+  <rect x="590" y="190" width="240" height="120" rx="12" fill="#130c2a" stroke="#4c1d95" stroke-width="0.8"/>
+  <text x="606" y="213" font-size="10" fill="#a78bfa" font-weight="bold">INFRASTRUCTURE</text>
+  <line x1="600" y1="220" x2="814" y2="220" stroke="#4c1d95" stroke-width="0.5" opacity="0.6"/>
+
+  <text x="600" y="240" font-size="9" fill="#7c3aed" opacity="0.75">k8s nodes</text>
+  <text x="814" y="240" font-size="10" fill="#c084fc" text-anchor="end" font-weight="bold">24 / 24</text>
+  <text x="600" y="258" font-size="9" fill="#7c3aed" opacity="0.75">pipelines today</text>
+  <text x="814" y="258" font-size="10" fill="#c084fc" text-anchor="end" font-weight="bold">47 runs</text>
+  <text x="600" y="276" font-size="9" fill="#7c3aed" opacity="0.75">active alerts</text>
+  <text x="814" y="276" font-size="10" fill="#4ade80" text-anchor="end" font-weight="bold">0 firing</text>
+  <text x="600" y="294" font-size="9" fill="#7c3aed" opacity="0.75">terraform state</text>
+  <text x="814" y="294" font-size="10" fill="#60a5fa" text-anchor="end" font-weight="bold">in sync</text>
+
+  <!-- Footer -->
+  <line x1="30" y1="320" x2="830" y2="320" stroke="#4c1d95" stroke-width="0.4" opacity="0.3"/>
+  <text x="40" y="334" font-size="9" fill="#6d28d9" opacity="0.45">
+    datadog · dynatrace · appdynamics · cloudwatch · kubernetes · terraform · ansible · gitlab-ci · jenkins · flux
+  </text>
+  <text x="820" y="334" font-size="9" fill="#3b82f6" opacity="0.4" text-anchor="end">
+    <tspan class="cursor">▮</tspan> live
+  </text>
+</svg>
